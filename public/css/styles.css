@@ -1,0 +1,186 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar-brand svg {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* public/css/styles.css */
+body {
+    background-color: #fdfbe8;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+.card {
+  transition: transform 0.2s;
+  margin-bottom: 20px;
+  border: 2px solid #007bff;
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px) rotate(2deg);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.display-4 {
+  color: #007bff;
+  text-shadow: 2px 2px #ff6b6b;
+}
+
+.list-group-item {
+  border: none;
+  padding: 0.5rem 1.25rem;
+  background-color: transparent;
+}
+
+.list-group-item:before {
+  content: '🦘';
+  margin-right: 10px;
+}
+
+.btn-primary, .btn-outline-primary {
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.btn-primary:hover, .btn-outline-primary:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* chat styles */
+#chat-messages {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  
+#chat-messages div {
+  background-color: #e9ecef;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#chat-form input {
+  border-radius: 20px 0 0 20px;
+}
+
+#chat-form button {
+  border-radius: 0 20px 20px 0;
+}
+
+/* general styles */
+.joey-card {
+  border: 3px solid #FF9800;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+}
+
+.joey-title {
+  color: #FF5722;
+  text-shadow: 2px 2px #FFC107;
+}
+
+.joey-input {
+  border: 2px solid #FF9800;
+  border-radius: 10px;
+}
+
+.joey-button {
+  background-color: #FF5722;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.joey-button:hover {
+  background-color: #FF9800;
+  transform: scale(1.05);
+}
+
+.joey-link {
+  color: #FF5722;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.joey-link:hover {
+  color: #FF9800;
+  text-decoration: underline;
+}
+
+.joey-weather-info {
+  background-color: #FFF9C4;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.joey-weather-info h3 {
+  color: #FF5722;
+}
+
+.joey-title {
+    color: #FF5722;
+    text-shadow: 2px 2px #FFC107;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+#chat-messages {
+    background-color: #FFF9C4;
+    border: 2px solid #FF9800;
+    border-radius: 10px;
+  }
+  
+  .joey-message {
+    background-color: #FFE082;
+    border-radius: 15px;
+  }
+  
+  #chat-form .joey-input {
+    border-radius: 20px 0 0 20px;
+  }
+  
+  #chat-form .joey-button {
+    border-radius: 0 20px 20px 0;
+  }
+  
+/* Add some fun animations */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.joey-card:hover {
+  animation: wiggle 0.5s ease-in-out;
+}

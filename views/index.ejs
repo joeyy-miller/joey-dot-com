@@ -1,0 +1,80 @@
+<!-- views/index.ejs -->
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1 class="display-4 mb-4">Welcome to Joey.com</h1>
+        <p class="lead mb-5">The world's premier destination for all things Joey. Yes, you read that right. Just Joeys.</p>
+      </div>
+    </div>
+  
+    <div class="row mb-5">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Joey Name Generator</h5>
+            <p class="card-text">Not a Joey? No problem! Get your honorary Joey name here.</p>
+            <button class="btn btn-primary" onclick="alert('Your Joey name is: Joey McJoeyface')">Joeyify Me!</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Daily Joey Fact</h5>
+            <p class="card-text" id="joey-fact">Did you know? The name Joey is actually short for 'Joeyseph'.</p>
+            <button class="btn btn-outline-primary" onclick="document.getElementById('joey-fact').innerHTML = 'New fact: Joeys have a secret handshake. It\'s just a normal handshake, but you yell \"JOEY!\" really loud.'">New Fact</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Joey Chat</h5>
+            <p class="card-text">Chat with other Joeys. Or just yourself. We don't judge.</p>
+            <% if (locals.user) { %>
+              <a href="/joey-chat" class="btn btn-outline-primary">Enter Joey Chat</a>
+            <% } else { %>
+              <a href="/register" class="btn btn-outline-primary">Become a Joey</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center mb-4">Why Choose Joey.com?</h2>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item">🦘 100% Joey-approved content</li>
+          <li class="list-group-item">🦘 Joey-to-Joey networking opportunities</li>
+          <li class="list-group-item">🦘 Exclusive "Joey" merchandise (it's just regular stuff with "Joey" written on it)</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item">🦘 Daily Joey horoscopes (spoiler: they're all great)</li>
+          <li class="list-group-item">🦘 Joey name pronunciation guide (it's just "Joey")</li>
+          <li class="list-group-item">🦘 Free virtual high-fives from Joey himself (whoever that is)</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row mt-5">
+      <div class="col-md-12 text-center">
+        <p class="font-italic">"If your name's not Joey, we still love you. But also, why?" - Joey, probably</p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Add this script for a little extra fun
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.body.addEventListener('click', function(e) {
+        if(Math.random() < 0.1) {  // 10% chance on each click
+          alert("Joey!");
+        }
+      });
+    });
+  </script>

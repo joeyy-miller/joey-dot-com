@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5 joey-card">
+        <div class="card-body">
+          <h2 class="text-center mb-4 joey-title">Joey Login</h2>
+          <% if (locals.error) { %>
+            <div class="alert alert-danger"><%= error %></div>
+          <% } %>
+          <form action="/login" method="POST">
+            <div class="mb-3">
+              <label for="username" class="form-label">Joey Name</label>
+              <input type="text" class="form-control joey-input" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Secret Joey Password</label>
+              <input type="password" class="form-control joey-input" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 joey-button">Enter the Joey Zone</button>
+          </form>
+          <p class="mt-3 text-center">
+            <a href="/forgot-password" class="joey-link">Forgot your Joey password?</a> | 
+            <a href="/register" class="joey-link">Become a Joey</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

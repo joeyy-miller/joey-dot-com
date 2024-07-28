@@ -1,0 +1,55 @@
+<!-- views/joey-chat.ejs -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2 class="text-center mb-4 joey-title">Joey Chat</h2>
+        <div id="chat-messages" class="border p-3 mb-3" style="height: 400px; overflow-y: auto;">
+          <!-- Messages will be inserted here -->
+        </div>
+        <form id="chat-form">
+          <div class="input-group">
+            <input type="text" id="chat-input" class="form-control joey-input" placeholder="Type your Joey message...">
+            <button class="btn btn-primary joey-button" type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const socket = io();
+      const chatForm = document.getElementById('chat-form');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+  
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (chatInput.value) {
+          const joeyMessage = joeyfy(chatInput.value);
+          socket.emit('chat message', { user: '<%= user.username %>', message: joeyMessage });
+          chatInput.value = '';
+        }
+      });
+  
+      socket.on('chat message', (msg) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('mb-2', 'p-2', 'rounded', 'joey-message');
+        messageElement.textContent = `${msg.user}: ${msg.message}`;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      });
+  
+      function joeyfy(message) {
+        const joeyPhrases = [
+          "How you doin'?",
+          "Could I BE any more Joey?",
+          "Joey doesn't share food!",
+          "It's Joey time!",
+          "Whoa!",
+        ];
+        return Math.random() < 0.2 ? joeyPhrases[Math.floor(Math.random() * joeyPhrases.length)] : message;
+      }
+    });
+  </script>
